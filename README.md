@@ -22,6 +22,23 @@ LIMIT 5;`
 ```
 <img src="https://github.com/salmiah-ls/northwind-mysql/blob/main/images/query-1.png"></img><br /><br />
 
+#### <li>Same with query above, but divide employees based on their performance. 'Great' if total orders >= 100; 'Average' if total orders between 50 to 99; 'Poor' if total orders < 50.</li>
+```
+SELECT first_name, last_name, total_orders,
+CASE
+    WHEN total_orders >= 100 THEN 'Great'
+    WHEN total_orders < 100 AND total_orders >= 50 THEN 'Average'
+    WHEN total_orders < 50 THEN 'Poor'
+END AS performance
+FROM (
+	SELECT e.first_name, e.last_name, COUNT(o.order_id) AS total_orders
+	FROM employees e
+	INNER JOIN orders o ON e.employee_id = o.employee_id
+	GROUP BY o.employee_id) AS new_table
+ORDER BY total_orders desc;  
+```
+<img src="https://github.com/salmiah-ls/northwind-mysql/blob/main/images/query-1a.png"></img><br /><br />
+                          
 #### <li>Customers' details (id, name, contact, address, city, country) managed by employee Laura Callahan, sort by id alphabetically.</li>
 ```
 SELECT DISTINCT c.customer_id, c.customer_name, c.contact_name, c.address, c.city, c.country
