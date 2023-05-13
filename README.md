@@ -8,7 +8,7 @@ There are several differences:
 - there are 2 tables I don't include, **customer_customer_demo** and **customer_demographics**, because both tables are empty and contain no data, so I think there is no need to add into the database.
 
 ## ER Diagram
-<img src=northwind-mysql-erd.png>
+<img src=northwind-mysql-erd.png width="600">
 
 ## Examples of Query
 #### <li>Top 5 employees (first_name, last_name) based on amount of orders they managed.</li>
