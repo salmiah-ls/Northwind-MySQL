@@ -20,7 +20,7 @@ GROUP BY o.employee_id
 ORDER BY total_orders DESC
 LIMIT 5;`
 ```
-<img src="https://github.com/salmiah-ls/northwind-mysql/blob/main/images/query-1.png"><br />
+<img src="https://github.com/salmiah-ls/northwind-mysql/blob/main/images/query-1.png"></img><br /><br />
 
 #### <li>Customers' details (id, name, contact, address, city, country) managed by employee Laura Callahan, sort by id alphabetically.</li>
 ```
@@ -30,4 +30,14 @@ INNER JOIN orders o ON c.customer_id = o.customer_id)
 INNER JOIN employees e ON o.employee_id = e.employee_id and e.last_name='Callahan' AND e.first_name='Laura')
 ORDER BY c.customer_id;
 ```
-<img src="https://github.com/salmiah-ls/northwind-mysql/blob/main/images/query-2.png">
+<img src="https://github.com/salmiah-ls/northwind-mysql/blob/main/images/query-2.png"></img><br /><br />
+
+#### <li>Details of products (id, name, quantity per unit, unit price) ordered on August 1996 sort by unit price descending.</li>
+```
+SELECT DISTINCT p.product_id, p.product_name, p.quantity_per_unit, p.unit_price
+FROM ((products p
+INNER JOIN order_details od on p.product_id = od.product_id)
+INNER JOIN orders o ON od.order_id = o.order_id AND o.order_date BETWEEN '1996-08-01' AND '1996-08-30')
+ORDER BY p.unit_price DESC;
+```
+<img src="https://github.com/salmiah-ls/northwind-mysql/blob/main/images/query-3.png"></img>
