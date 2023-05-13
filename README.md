@@ -49,4 +49,13 @@ FROM ((order_details od
 INNER JOIN products p ON od.product_id = p.product_id AND p.product_name = 'Ipoh Coffee')
 INNER JOIN orders o ON od.order_id = o.order_id AND o.order_date BETWEEN '1996-09-01' AND '1996-12-31');
 ```
-<img src="https://github.com/salmiah-ls/northwind-mysql/blob/main/images/query-4.png"></img>
+<img src="https://github.com/salmiah-ls/northwind-mysql/blob/main/images/query-4.png"></img><br /><br />
+
+#### <li>Total Net-Sales of query above</li>
+```
+SELECT p.product_name, ROUND(SUM((od.unit_price * od.quantity) - (od.discount * od.unit_price * od.quantity)), 2) as total_sales
+FROM ((order_details od
+INNER JOIN products p ON od.product_id = p.product_id AND p.product_name = 'Ipoh Coffee')
+INNER JOIN orders o ON od.order_id = o.order_id AND o.order_date BETWEEN '1996-09-01' AND '1996-12-31');
+```
+<img src="https://github.com/salmiah-ls/northwind-mysql/blob/main/images/query-5.png"></img>
