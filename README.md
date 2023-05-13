@@ -40,4 +40,13 @@ INNER JOIN order_details od on p.product_id = od.product_id)
 INNER JOIN orders o ON od.order_id = o.order_id AND o.order_date BETWEEN '1996-08-01' AND '1996-08-30')
 ORDER BY p.unit_price DESC;
 ```
-<img src="https://github.com/salmiah-ls/northwind-mysql/blob/main/images/query-3.png"></img>
+<img src="https://github.com/salmiah-ls/northwind-mysql/blob/main/images/query-3.png"></img><br /><br />
+
+#### <li>Sales and Net-Sales of product Ipoh Coffee sold from September 1996 to December 1996</li>
+```
+SELECT o.order_id, o.order_date, ROUND((od.unit_price * od.quantity), 2) as sales, ROUND(((od.unit_price * od.quantity) - (od.discount * od.unit_price * od.quantity)), 2) as net_sales
+FROM ((order_details od
+INNER JOIN products p ON od.product_id = p.product_id AND p.product_name = 'Ipoh Coffee')
+INNER JOIN orders o ON od.order_id = o.order_id AND o.order_date BETWEEN '1996-09-01' AND '1996-12-31');
+```
+<img src="https://github.com/salmiah-ls/northwind-mysql/blob/main/images/query-4.png"></img>
