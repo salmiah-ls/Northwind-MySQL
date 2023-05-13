@@ -5,7 +5,7 @@ I created this sample Northwind Database for beginners who want learn about MySQ
 
 There are several differences:
 - in W3Schools, **CustomerID** column in **Customers** table uses `SMALLINT` as datatype, but here I use `CHAR(5)` following the original database.
-- there are 2 tables I don't include, **customer_customer_demo** and **customer_demographics**, because both tables are empty and contain no data, so I think there is no need to add into the database.
+- there are 2 tables I didn't include, **customer_customer_demo** and **customer_demographics**, because both tables are empty and contain no data, so in my opinion, there is no need to add them into the database.
 
 ## ER Diagram
 <img src=northwind-mysql-erd.png width="800">
