@@ -12,7 +12,7 @@ There are several differences:
 ## ER Diagram
 <img src=northwind-mysql-erd.png width="800">
 
-## Examples of Query
+## Query Examples
 #### <li>Top 5 employees (first_name, last_name) with highest amount of orders they managed.</li>
 ```
 SELECT e.first_name, e.last_name, COUNT(o.order_id) AS total_orders
