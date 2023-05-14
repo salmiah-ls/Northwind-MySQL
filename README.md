@@ -1,6 +1,8 @@
 # Northwind Database - MySQL version
 
 ## Description
+The Northwind database is a sample database that was originally created by Microsoft and used as the basis for their tutorials in a variety of database products. The database contains the sales data for a fictitious company called 'Northwind Traders', which imports and exports specialty foods from around the world. The Northwind is an excellent tutorial schema for a small-business ERP, with customers, orders, inventory, purchasing, suppliers, shipping, employees, and single-entry accounting. 
+
 I created this sample Northwind Database for beginners who want learn about MySQL from [W3Schools](https://www.w3schools.com/mysql/default.asp). Since I work with MySQL, so I modify the syntax accordingly. I work with MySQL version 8.0.27.
 
 There are several differences:
