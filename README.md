@@ -41,7 +41,7 @@ ORDER BY total_orders desc;
 ```
 <img src="https://github.com/salmiah-ls/northwind-mysql/blob/main/images/query-1a.png"></img><br /><br />
                           
-#### <li>Customers' details (id, name, contact, address, city, country) managed by employee Laura Callahan, sort by id alphabetically.</li>
+#### <li>Customers' details (id, name, contact, address, city, country) whose orders managed by employee Laura Callahan.</li>
 ```
 SELECT DISTINCT c.customer_id, c.customer_name, c.contact_name, c.address, c.city, c.country
 FROM ((customers c
